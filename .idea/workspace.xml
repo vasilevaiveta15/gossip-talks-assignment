@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e70965d4-3d43-4058-b419-400cd9baf8b7" name="Changes" comment="1)Move the authentication from GossipController to the GossipServiceImpl in insert method&#10;2)Add checks in insert method in GossipServiceImpl for empty gossip and too long gossip&#10;3)Fix GossipServiceTest - insert method &#10;4)Clean the unnecessary imports">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bg/codeacademy/spring/gossiptalks/exceptions/InvalidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bg/codeacademy/spring/gossiptalks/exceptions/InvalidException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bg/codeacademy/spring/gossiptalks/security/CustomAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bg/codeacademy/spring/gossiptalks/security/CustomAuthenticationEntryPoint.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1yP5eW9oy14fo77ybbmGD5WEgWu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Beauty connect" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="bg.codeacademy.spring.gossiptalks.gossips" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.GossipServiceImplTest.inset_SaveAndReturnGossip">
+    <configuration name="GossipTalksIntegrationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gossip-talks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.codeacademy.spring.gossiptalks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.codeacademy.spring.gossiptalks" />
+      <option name="MAIN_CLASS_NAME" value="bg.codeacademy.spring.gossiptalks.GossipTalksIntegrationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gossip-talks" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bg.codeacademy.spring.gossiptalks.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="SwaggerCodegen">
+      <option name="activeConfigurationType" value="FILE" />
+      <option name="configurationPath" value="" />
+      <option name="customJreEnabled" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="enableDebugLogging" value="false" />
+      <option name="generateToPath" value="C:\Users\Iveta\IdeaProjects\gossip-talks-assignment-team-4\gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorPath" value="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar" />
+      <option name="jdkPath" value="" />
+      <option name="language" value="java" />
+      <option name="specificationPath" value="C:\Users\Iveta\IdeaProjects\gossip-talks-assignment-team-4\src\main\resources\static\api.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GossipServiceImplTest.inset_SaveAndReturnGossip" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="gossip-talks-assignment-team-4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.codeacademy.spring.gossiptalks.gossips.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.codeacademy.spring.gossiptalks.gossips" />
+      <option name="MAIN_CLASS_NAME" value="bg.codeacademy.spring.gossiptalks.gossips.GossipServiceImplTest" />
+      <option name="METHOD_NAME" value="inset_SaveAndReturnGossip" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="gossip-talks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.codeacademy.spring.gossiptalks.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.codeacademy.spring.gossiptalks.user" />
+      <option name="MAIN_CLASS_NAME" value="bg.codeacademy.spring.gossiptalks.user.UserControllerTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.createUser_ReturnsBadRequest_IfPasswordsDontMatch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="gossip-talks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.codeacademy.spring.gossiptalks.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.codeacademy.spring.gossiptalks.user" />
+      <option name="MAIN_CLASS_NAME" value="bg.codeacademy.spring.gossiptalks.user.UserControllerTest" />
+      <option name="METHOD_NAME" value="createUser_ReturnsBadRequest_IfPasswordsDontMatch" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bg.codeacademy.spring.gossiptalks" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="gossip-talks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.codeacademy.spring.gossiptalks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.codeacademy.spring.gossiptalks" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.GossipServiceImplTest.inset_SaveAndReturnGossip" />
+        <item itemvalue="JUnit.GossipTalksIntegrationTests" />
+        <item itemvalue="TestNG.bg.codeacademy.spring.gossiptalks" />
+        <item itemvalue="TestNG.UserControllerTest" />
+        <item itemvalue="TestNG.UserControllerTest.createUser_ReturnsBadRequest_IfPasswordsDontMatch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e70965d4-3d43-4058-b419-400cd9baf8b7" name="Changes" comment="" />
+      <created>1632140478013</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632140478013</updated>
+      <workItem from="1632140480293" duration="1467000" />
+      <workItem from="1632141987751" duration="275000" />
+      <workItem from="1632142314133" duration="2612000" />
+      <workItem from="1632144967068" duration="1440000" />
+      <workItem from="1632150554309" duration="2420000" />
+      <workItem from="1632153099871" duration="5809000" />
+      <workItem from="1632161078434" duration="561000" />
+      <workItem from="1632162241910" duration="9580000" />
+      <workItem from="1632174684326" duration="3000" />
+      <workItem from="1632203611199" duration="1948000" />
+      <workItem from="1632209441817" duration="1930000" />
+      <workItem from="1632212225392" duration="972000" />
+      <workItem from="1632213213369" duration="2916000" />
+      <workItem from="1632216246616" duration="9063000" />
+      <workItem from="1632242032676" duration="1297000" />
+      <workItem from="1632244254179" duration="483000" />
+      <workItem from="1632244770234" duration="4461000" />
+      <workItem from="1632253722501" duration="528000" />
+      <workItem from="1632254289287" duration="2188000" />
+      <workItem from="1632302654738" duration="30743000" />
+      <workItem from="1632385414262" duration="9091000" />
+      <workItem from="1632395611186" duration="12022000" />
+      <workItem from="1632417319621" duration="877000" />
+      <workItem from="1632418274506" duration="3789000" />
+      <workItem from="1632429114971" duration="4830000" />
+      <workItem from="1632434086608" duration="319000" />
+      <workItem from="1632434562522" duration="3290000" />
+      <workItem from="1632438124380" duration="1579000" />
+      <workItem from="1632439789213" duration="1013000" />
+      <workItem from="1632466422135" duration="18968000" />
+      <workItem from="1632486578209" duration="21000" />
+      <workItem from="1632491633731" duration="6394000" />
+      <workItem from="1632498785289" duration="8293000" />
+      <workItem from="1632515392596" duration="2219000" />
+      <workItem from="1632685426011" duration="2173000" />
+      <workItem from="1632688900282" duration="8000" />
+      <workItem from="1632750114290" duration="1866000" />
+      <workItem from="1632760333243" duration="5517000" />
+      <workItem from="1632779392123" duration="1407000" />
+      <workItem from="1632824577945" duration="2067000" />
+      <workItem from="1632826727088" duration="1083000" />
+      <workItem from="1632833657574" duration="932000" />
+      <workItem from="1632838989572" duration="4000" />
+      <workItem from="1632849939173" duration="94000" />
+      <workItem from="1632855407275" duration="52000" />
+      <workItem from="1632905791456" duration="322000" />
+      <workItem from="1632912788855" duration="1255000" />
+      <workItem from="1632982305182" duration="7132000" />
+      <workItem from="1633020007062" duration="6000" />
+      <workItem from="1633383287091" duration="140000" />
+      <workItem from="1634214513973" duration="7000" />
+      <workItem from="1635538767051" duration="461000" />
+      <workItem from="1635624065921" duration="14000" />
+      <workItem from="1636564167648" duration="29000" />
+      <workItem from="1644920146544" duration="2107000" />
+      <workItem from="1677519492348" duration="924000" />
+      <workItem from="1680609324314" duration="5927000" />
+      <workItem from="1680635589505" duration="1119000" />
+      <workItem from="1680685129238" duration="1452000" />
+      <workItem from="1680809408433" duration="1297000" />
+      <workItem from="1680811077063" duration="1586000" />
+      <workItem from="1680860041642" duration="1534000" />
+      <workItem from="1680980366004" duration="39000" />
+      <workItem from="1690918132800" duration="4649000" />
+      <workItem from="1691318848132" duration="60000" />
+    </task>
+    <task id="LOCAL-00001" summary="1)Gossip(dto): Change name of Gossip to GossipDto, id-&gt;Long, dateTime-&gt;LocalDateTime&#10;2)GossipList: Change atribute GossipDto content -&gt; List&lt;GossipDto&gt; content&#10;3)Gossip(entity): change id-&gt;Long, dateTime-&gt;LocalDateTime&#10;4)GossipServiceImpl: In the insert method set LocalDateTime.now because the atribute cannot be null&#10;5)GossipController: showAllGossipsByPage, createGossip, showAllGossipsOfUserByPage">
+      <created>1632173930507</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632173930507</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1)Add follow method in userController&#10;2)insert gossip&#10;3)Add InvalidException in GlobalException&#10;4)Refactor post method in Gossip Controller(change to receive gossip dto)">
+      <created>1632407634875</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1632407634876</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1)Change follow method in userServiceImpl and UserController">
+      <created>1632429593772</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632429593772</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add getAll method in GossipController">
+      <created>1632440275195</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632440275195</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add tests and reformatted code.">
+      <created>1632509587856</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632509587856</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed merge with conflicts.">
+      <created>1632510582274</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632510582274</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1)Move the authentication from GossipController to the GossipServiceImpl in insert method&#10;2)Add checks in insert method in GossipServiceImpl for empty gossip and too long gossip&#10;3)Fix GossipServiceTest - insert method &#10;4)Clean the unnecessary imports">
+      <created>1632827514898</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632827514898</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1)Gossip(dto): Change name of Gossip to GossipDto, id-&gt;Long, dateTime-&gt;LocalDateTime&#10;2)GossipList: Change atribute GossipDto content -&gt; List&lt;GossipDto&gt; content&#10;3)Gossip(entity): change id-&gt;Long, dateTime-&gt;LocalDateTime&#10;4)GossipServiceImpl: In the insert method set LocalDateTime.now because the atribute cannot be null&#10;5)GossipController: showAllGossipsByPage, createGossip, showAllGossipsOfUserByPage" />
+    <MESSAGE value="1)Add follow method in userController&#10;2)insert gossip&#10;3)Add InvalidException in GlobalException&#10;4)Refactor post method in Gossip Controller(change to receive gossip dto)" />
+    <MESSAGE value="1)Change follow method in userServiceImpl and UserController" />
+    <MESSAGE value="Add getAll method in GossipController" />
+    <MESSAGE value="Add tests and reformatted code." />
+    <MESSAGE value="Fixed merge with conflicts." />
+    <MESSAGE value="1)Move the authentication from GossipController to the GossipServiceImpl in insert method&#10;2)Add checks in insert method in GossipServiceImpl for empty gossip and too long gossip&#10;3)Fix GossipServiceTest - insert method &#10;4)Clean the unnecessary imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="1)Move the authentication from GossipController to the GossipServiceImpl in insert method&#10;2)Add checks in insert method in GossipServiceImpl for empty gossip and too long gossip&#10;3)Fix GossipServiceTest - insert method &#10;4)Clean the unnecessary imports" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/bg/codeacademy/spring/gossiptalks/gossips/GossipServiceImplTest.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gossip_talks_assignment_team_4$bg_codeacademy_spring_gossiptalks.ic" NAME="bg.codeacademy.spring.gossiptalks Coverage Results" MODIFIED="1632992781933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>bg.codeacademy.spring.gossiptalks.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="hg4idea.settings">
+    <option name="CHECK_INCOMING_OUTGOING" value="true" />
+    <option name="RECENT_HG_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+</project>

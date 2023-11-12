@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <link href="images/favicon.png" rel="icon" type="image/png"/>
+
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/sketchy/bootstrap.min.css"
+        rel="stylesheet">
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet">
+  <link href="simple-sidebar.css"
+        rel="stylesheet">
+
+  <title>Gossip Talks</title>
+</head>
+<body>
+
+
+<div class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="alert alert-warning" id="sidebar-wrapper">
+    <h4 class="alert-heading">Friends</h4>
+    <p class="list-group list-group-flush" id="usersFriends">
+      <!--      <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>-->
+    </p>
+    <h4 class="alert-heading">Others</h4>
+    <p class="list-group list-group-flush" id="usersOthers"></p>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#bee5eb">
+      <a class="navbar-brand" href="#">
+        <img alt="logo" height="30" src="images/favicon.png">
+      </a>
+
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler btn"
+              data-target="#navbarSupportedContent" data-toggle="collapse"
+              type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" id="menu-toggle">
+              <i class="fa fa-users"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-target="#changePasswordModal" data-toggle="modal">
+              <i class="fa fa-user"></i>
+              <span id="currentUser">The User</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="bg-transparent" id="notifications"
+           style="position: absolute; z-index: 100; bottom: 1em; right: 1em;">
+        <!-- this is where all notifications go -->
+      </div>
+
+      <h1 class="mt-4">Post Gossip</h1>
+      <form id="postGossip">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <img alt="say" height="20" src="images/favicon.png">
+            </div>
+          </div>
+          <input class="form-control" name="text" type="text">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Now</button>
+          </div>
+        </div>
+      </form>
+
+      <h1 class="mt-4">Gossips from your friend list</h1>
+      <div class="list-group" id="posts">
+        <!--
+        <a href="#" class="list-group-item list-group-item-action active">
+          <div class="d-flex w-100 justify-content-between">
+            <h5>ivan</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">Some post here</p>
+        </a>
+        -->
+      </div>
+      <div id="page-selection"></div>
+
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<div aria-hidden="true" aria-labelledby="registerModalTitle" class="modal fade" id="registerModal"
+     role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form id="registerForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalTitle">Register now for FREE, and start
+            gossipping
+            right away!</h5>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="col-form-label" for="registerUsername">Username:</label>
+            <input aria-describedby="registerUsernameHelp" class="form-control" id="registerUsername" name="username"
+                   required type="text">
+            <small class="form-text text-muted" id="registerUsernameHelp">This is how you identify
+              to the
+              system.</small>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="registerFullName">Full Name:</label>
+            <input aria-describedby="registerFullNameHelp" class="form-control" id="registerFullName" name="name"
+                   type="text">
+            <small class="form-text text-muted" id="registerFullNameHelp">What is your name?</small>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="registerMail">E-Mail:</label>
+            <input aria-describedby="registerMailHelp" class="form-control" id="registerMail" name="email"
+                   required type="email">
+            <small class="form-text text-muted" id="registerMailHelp">This is your registration
+              email.</small>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="registerPassword">Password:</label>
+            <input aria-describedby="registerPasswordHelp" class="form-control" id="registerPassword" name="password"
+                   required type="password">
+            <small class="form-text text-muted" id="registerPasswordHelp">This is your new
+              password.</small>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="registerPasswordConfirmation">Password
+              Confirmation:</label>
+            <input aria-describedby="registerPasswordConfirmationHelp" class="form-control" id="registerPasswordConfirmation"
+                   name="passwordConfirmation"
+                   required type="password">
+            <small class="form-text text-muted" id="registerPasswordConfirmationHelp">Retype your
+              new password.</small>
+          </div>
+          <div class="alert alert-warning" role="alert" style="display:none">
+            Failed! Please check your passwords!
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+          <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="changePasswordModalTitle" class="modal fade" id="changePasswordModal"
+     role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form id="passwordForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePasswordModalTitle">Change Password</h5>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="col-form-label" for="oldPassword">Old Password:</label>
+            <input aria-describedby="oldPasswordHelp" class="form-control" id="oldPassword" name="oldPassword"
+                   required type="password">
+            <small class="form-text text-muted" id="oldPasswordHelp">This is your current
+              password.</small>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="newPassword">New Password:</label>
+            <input aria-describedby="newPasswordHelp" class="form-control" id="newPassword" name="password"
+                   required type="password">
+            <small class="form-text text-muted" id="newPasswordHelp">This is your new
+              password.</small>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="passwordConfirmation">Password Confirmation:</label>
+            <input aria-describedby="passwordConfirmationHelp" class="form-control" id="passwordConfirmation"
+                   name="passwordConfirmation"
+                   required type="password">
+            <small class="form-text text-muted" id="passwordConfirmationHelp">Retype your new
+              password.</small>
+          </div>
+          <div class="alert alert-warning" role="alert" style="display:none">
+            Failed! Please check your passwords!
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script src="jquery.bootpag.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
